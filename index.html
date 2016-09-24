@@ -32,23 +32,23 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="clang-builder" class="anchor" href="#clang-builder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clang Builder</h1>
+<a id="clangbuilder" class="anchor" href="#clangbuilder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ClangBuilder</h1>
 
-<p>Clang Build Environment On Windows, Long Term Evolution   </p>
+<p>ClangBuilder is Build Clang Environment On Windows. Fecth Packages, Auto build</p>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation:</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<h4>
-<a id="usually" class="anchor" href="#usually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usually:</h4>
+<h3>
+<a id="usually" class="anchor" href="#usually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usually</h3>
 
-<p>Download from Github, If your known use Git  </p>
+<p>Download from Github, If your known use Git</p>
 
-<pre><code>git clone https://github.com/fstudio/clangbuilder.git clangbuilder
-</code></pre>
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/fstudio/clangbuilder.git clangbuilder</pre></div>
 
-<p>Click the <em>Install.bat</em> in the clangbuilder directory, this will run PowerShell startup  <em>bin/Installer/Install.ps1</em><br>
-It is recommended that whenever you have PowerShell scripts, and try not to delete the project file in the tools directory.</p>
+<p>Click the <em>Install.bat</em> in the clangbuilder directory, this will run PowerShell startup  <em>bin/Installer/Install.ps1</em> </p>
+
+<p>It is recommended that whenever you have PowerShell scripts, and try not to delete the project file in the tools directory.</p>
 
 <p>Similarly, you can start a PowerShell runs Install.ps1, generally run PowerShell scripts on the Windows right-click menu option, you can right-click the menu "<em>run with PowerShell</em>"
 Above procedure does not require administrator privileges.</p>
@@ -57,7 +57,7 @@ Above procedure does not require administrator privileges.</p>
 
 <div class="highlight highlight-source-powershell"><pre><span class="pl-c1">Get-ExecutionPolicy</span></pre></div>
 
-<p>Output:   </p>
+<p><strong>Output</strong>:</p>
 
 <blockquote>
 <p>Restricted</p>
@@ -68,67 +68,59 @@ Above procedure does not require administrator privileges.</p>
 <div class="highlight highlight-source-powershell"><pre><span class="pl-c1">Set-ExecutionPolicy</span> RemoteSigned</pre></div>
 
 <h4>
-<a id="web-installer" class="anchor" href="#web-installer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web Installer:</h4>
+<a id="web-installer" class="anchor" href="#web-installer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web Installer</h4>
 
-<p>PowerShell, Enter:    </p>
+<p>PowerShell, Enter:</p>
 
 <div class="highlight highlight-source-powershell"><pre><span class="pl-k">&amp;</span>{<span class="pl-k">$</span><span class="pl-smi">wc</span><span class="pl-k">=</span><span class="pl-c1">New-Object</span> System.Net.WebClient<span class="pl-k">;</span><span class="pl-k">$</span><span class="pl-smi">wc</span><span class="pl-en">.Proxy</span><span class="pl-k">=</span><span class="pl-e">[System.Net.WebRequest]</span>::DefaultWebProxy<span class="pl-k">;</span><span class="pl-k">$</span><span class="pl-smi">wc</span><span class="pl-en">.Proxy.Credentials</span><span class="pl-k">=</span><span class="pl-e">[System.Net.CredentialCache]</span>::DefaultNetworkCredentials<span class="pl-k">;</span><span class="pl-c1">Invoke-Expression</span> <span class="pl-k">(</span><span class="pl-k">$</span><span class="pl-smi">wc</span><span class="pl-en">.DownloadString</span><span class="pl-k">(</span><span class="pl-s">'https://raw.githubusercontent.com/fstudio/clangbuilder/master/bin/Installer/WebInstall.ps1'</span><span class="pl-k">)</span><span class="pl-k">)</span>}</pre></div>
 
-<p>Or:  </p>
+<p>Or CMD Enter:</p>
 
-<p>Cmd Enter:   </p>
+<div class="highlight highlight-source-batchfile"><pre><span class="pl-k">@powershell </span>-NoProfile -ExecutionPolicy unrestricted -Command <span class="pl-s">"&amp;{$wc=New-Object System.Net.WebClient;$wc.Proxy=[System.Net.WebRequest]::DefaultWebProxy;$wc.Proxy.Credentials=[System.Net.CredentialCache]::DefaultNetworkCredentials;Invoke-Expression ($wc.DownloadString('https://raw.githubusercontent.com/fstudio/clangbuilder/master/bin/Installer/WebInstall.ps1'))}"</span></pre></div>
 
-<div class="highlight highlight-source-dosbatch"><pre>@powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="pl-s"><span class="pl-pds">"</span>&amp;{$wc=New-Object System.Net.WebClient;$wc.Proxy=[System.Net.WebRequest]::DefaultWebProxy;$wc.Proxy.Credentials=[System.Net.CredentialCache]::DefaultNetworkCredentials;Invoke-Expression ($wc.DownloadString('https://raw.githubusercontent.com/fstudio/clangbuilder/master/bin/Installer/WebInstall.ps1'))}<span class="pl-pds">"</span></span></pre></div>
-
-<p><strong>Your Should Input Your ClangSetup Install Loaction!!!!</strong></p>
+<p>By default <strong>Your Should Input Your Clangbuilder Install Loaction!!!!</strong></p>
 
 <h2>
 <a id="clang-on-windows" class="anchor" href="#clang-on-windows" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clang on Windows</h2>
 
-<p>When Build Clang on Windows,Best of Visual Studio version</p>
+<p>Clangbuilder Now Only support use Visual C++ build Clang LLVM LLDB. And Best Visual Studio Version:</p>
 
 <blockquote>
-<p>VisualStudio 2013 Update 4</p>
+<p>VisualStudio 2015</p>
 </blockquote>
 
-<p>Or Your can use Mingw-w64,your can cross compile LLVM on Linux ,Mingw-w64 Support it.</p>
+<p>Aslo, Your can use MSYS2, use pacman install Clang.</p>
 
-<p>The Other,Your can use cmake to create MinGW Makefile,or NMake Makefile ,run it ,The C and C++ Compiler is Mingw-w64 tools ( i686-w64-mingw32-gcc ,x86_64-w64-mingw32-g++)</p>
+<div class="highlight highlight-source-shell"><pre>pacman -S clang</pre></div>
 
 <h2>
 <a id="automated-build" class="anchor" href="#automated-build" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automated build</h2>
 
-<p>Run    </p>
+<p>run</p>
 
-<div class="highlight highlight-source-dosbatch"><pre>PowerShell -File .\bin\ClangbuilderManager.ps1 -VisualStudio 120 -Arch x64 -Flavor Release -Clear -Static</pre></div>
+<div class="highlight highlight-source-batchfile"><pre>PowerShell -File .\bin\ClangbuilderManager.ps1 -VisualStudio 120 -Arch x64 -Flavor Release -Clear -Static</pre></div>
 
 <h2>
-<a id="user-interface" class="anchor" href="#user-interface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User Interface</h2>
+<a id="clangbuilderui" class="anchor" href="#clangbuilderui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ClangbuilderUI</h2>
 
-<p>ClangbuilderUI        </p>
+<p>Your can click ClangbuilderUI, select your Visual Studio Version and Arch, and configuration</p>
 
-<p><img src="https://raw.githubusercontent.com/fstudio/clangbuilder/master/doc/images/ClangbuilderUI.png" alt="clangbuilderUI"></p>
-
-<p>Launcher<br>
-<img src="https://raw.githubusercontent.com/fstudio/clangbuilder/master/doc/images/launcher.jpg" alt="launcher"></p>
+<p><img src="./doc/images/ClangbuilderUI.png" alt="clangbuilder"></p>
 
 <h2>
 <a id="suggest" class="anchor" href="#suggest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Suggest</h2>
 
-<ol>
-<li>Best Platform is Windows 10 x64<br>
-</li>
-<li>-Clear flag will reset current process Environment PATH value, Resolve conflict environment variables<br>
-</li>
-<li>Build LLDB require Visual Studio 2015, When you not install Python 3.x ,Clangbuilder will download python.exe after inform you install.<br>
-</li>
+<ul>
+<li>Best Platform is Windows 10 x64</li>
+<li>-Clear flag will reset current process Environment PATH value, Resolve conflict environment variables</li>
+<li>Build LLDB require Visual Studio 2015, When you not install Python 3.x ,Clangbuilder will download python.exe after inform you install.</li>
 <li>Build LLDB, not test on Windows x86, maybe cannot find PYTHONHOME.</li>
-</ol>
+</ul>
 
 <h2>
-<a id="other" class="anchor" href="#other" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other</h2>
+<a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright</h2>
 
-<p>First Author: Force.Charlie<br>
+<p>Author: Force.Charlie<br>
 Copyright © 2016 ForceStudio. All Rights Reserved.</p>
       </section>
     </div>
