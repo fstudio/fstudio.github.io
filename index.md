@@ -1,7 +1,7 @@
 # Clangbuilder
 
 Automated tools help developers on Windows platforms building LLVM and clang.
- 
+
 
 ## Installation
 
@@ -40,33 +40,33 @@ If your need install `VisualCppTools.Community.Daily` ,click `script/VisualCppTo
 
 ## Build Clang on Windows
 
-Clangbuilder Now Only support use Visual C++ build Clang LLVM LLDB. 
+Clangbuilder Now Only support use Visual C++ build Clang LLVM LLDB.
 
 Best Visual Studio Version:
 
->Visual Studio 2017 15.5 or later
+> Visual Studio 2017 15.5 or later
 
 You can run ClangbuilderUI, Modify Arch, Configuration and other options. after click `Building`
 
 **ClangbuilderUI Snapshot**
 
-![clangbuilder](https://github.com/fstudio/clangbuilder/blob/master/docs/images/cbui.png)
+![clangbuilder](./images/cbui.png)
 
 **Update 2017-08-19** Clangbuilder support **VisualCppTools.Community.Daily**:
 
-![visualcpptools](https://github.com/fstudio/clangbuilder/blob/master/docs/images/visualcpptools.png)
+![visualcpptools](./images/visualcpptools.png)
 
 **VisualCppTools.Community.Daily** current not support msbuild (becasue cmake ...)
 
 **Update 2017-09-17** ClangbuilderUI Support EWDK
 
-![ewdk](https://github.com/fstudio/clangbuilder/blob/master/docs/images/ewdk.png)
+![ewdk](./images/ewdk.png)
 
 **Branch**
 
-+  Mainline, master/trunk branch , git fetch from https://github.com/llvm-mirror/
-+  Stable, llvm stable branch, like release_50, git fetch from https://github.com/llvm-mirror/
-+  Release, llvm release tag, download for https://releases.llvm.org/
++   Mainline, master/trunk branch , git fetch from [https://github.com/llvm-mirror/](https://github.com/llvm-mirror/)
++   Stable, llvm stable branch, like release_50, git fetch from [https://github.com/llvm-mirror/](https://github.com/llvm-mirror/)
++   Release, llvm release tag, download for [https://releases.llvm.org/](https://releases.llvm.org/)
 
 
 **CMake Custom flags**
@@ -135,7 +135,7 @@ See: [patch/libcxx-msvc-cxx17.patch](https://github.com/fstudio/clangbuilder/blo
 
 **ARM64**
 
-Build LLVM for ARM64 is broken, But You can download **Enterprise WDK (EWDK) Insider Preview** from https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK ,When you config `config/ewdk.json`, ClangbuilderUI able to start `ARM64 Environment Console`
+Build LLVM for ARM64 is broken, But You can download **Enterprise WDK (EWDK) Insider Preview** from [https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK) ,When you config `config/ewdk.json`, ClangbuilderUI able to start `ARM64 Environment Console`
 
 [ewdk.json template](https://github.com/fstudio/clangbuilder/blob/master/config/ewdk.template.json):
 ```json
@@ -145,7 +145,7 @@ Build LLVM for ARM64 is broken, But You can download **Enterprise WDK (EWDK) Ins
 }
 ```
 
-*Update*: Visual Studio 15.4 can install `Visual C++ compilers and libraries for ARM64`， CMake 3.10 will support ARM64. 
+*Update*: Visual Studio 15.4 can install `Visual C++ compilers and libraries for ARM64`， CMake 3.10 will support ARM64.
 
 See: [VS15: Adds ARM64 architecture support.](https://gitlab.kitware.com/cmake/cmake/merge_requests/1215)
 
@@ -158,11 +158,11 @@ See: [VS15: Adds ARM64 architecture support.](https://gitlab.kitware.com/cmake/c
 ## Custom PATH
 
 You can modify [config/initialize.json](https://github.com/fstudio/clangbuilder/blob/master/config/initialize.json) , add some directories to PATH. Note that directories have **higher priority** in PATH. (Insert Front)
- 
+
 
 ## Suggest
 
-+   Best Platform is Windows 10 x64 
++   Best Platform is Windows 10 x64
 +   Select `Use Clean Environment` will reset current process Environment PATH value, Resolve conflict environment variables
 +   If your will build lldb, your should install python3.
 
@@ -177,7 +177,7 @@ When you only need to start a console environment, you can click on the `Environ
 
 ## Add Portable Utilities
 
-You can modify `config/packages.json`, 
+You can modify `config/packages.json`,
 and then double-click `script/UpdatePkgs.bat` to the software you need as part of the Clangbuilder is added to the environment
 
 
@@ -205,4 +205,3 @@ Function Parallel() {
 License: MIT  
 Author: Force.Charlie  
 Copyright © 2018 Force Charlie. All Rights Reserved.
-
